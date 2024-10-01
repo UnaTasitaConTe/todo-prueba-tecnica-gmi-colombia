@@ -1,0 +1,8 @@
+/vendor
+.git
+.gitignore
+.env.example
+.gitattributes
+node_modules
+/node_modules
+Dockerfile
