@@ -3,6 +3,13 @@
         <Spinner v-if="spinnerActive"></Spinner>
         <div class="hero-content flex-col lg:flex-row-reverse">
             <div class="text-center lg:text-left">
+                <div class="mockup-code">
+                    <pre data-prefix="$"><code>Usuarios Para Usar</code></pre>
+                    <pre data-prefix="$"><code>email : usuario@gmail.com</code></pre>
+                    <pre data-prefix="$"><code>password: 123</code></pre>
+                    <pre data-prefix="$"><code>email : usuario2@gmail.com</code></pre>
+                    <pre data-prefix="$"><code>password: 123</code></pre>
+                </div>
                 <h1 class="text-5xl font-bold">SISTEMA TO DO!</h1>
                 <p class="py-6">
                     Organiza tus tareas de manera eficiente y mantén el control de tus actividades diarias.
@@ -33,7 +40,7 @@ const login = async (LoginDTO: LoginDTO) => {
     spinnerActive.value = true;
     const response = await AuthenticationService.login(LoginDTO);
     // console.log(response);
-    
+
     if (response) {
         return router.push('/');
     } else {
