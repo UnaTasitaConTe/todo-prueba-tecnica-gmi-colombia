@@ -19,8 +19,8 @@ class CreateTaskTable extends Migration
             $table->string('descripcion');
             $table->string('userId');
             $table->string('tags');
-            $table->string('date_expired');
-            $table->string('image');
+            $table->string('date_expired')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
