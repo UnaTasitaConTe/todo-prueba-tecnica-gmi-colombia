@@ -58,8 +58,9 @@ class TaskService implements ITaskService
             return new ApiResponseDTO('Fecha de expiración no aceptada debido a que es inferior de la fecha actual', $taskCreateDTO, 409);
         }
 
-
-        $taskCreateDTO->dateExpired = DateUtils::normalizeDate($taskCreateDTO->dateExpired);
+        if ($taskCreateDTO->dateExpired) {
+            $taskCreateDTO->dateExpired = DateUtils::normalizeDate($taskCreateDTO->dateExpired);
+        }
         $taskCreateDTO->userId = $userDTO->userId;
 
         $taskDTO = $this->taskRepository->update($id, $taskCreateDTO->toArray());
